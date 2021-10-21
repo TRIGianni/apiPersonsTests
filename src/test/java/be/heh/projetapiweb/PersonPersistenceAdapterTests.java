@@ -2,8 +2,6 @@ package be.heh.projetapiweb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.jdbc.DatabaseDriver;
-import org.springframework.boot.jdbc.EmbeddedDatabaseConnection;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
@@ -12,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
@@ -24,7 +21,7 @@ public class PersonPersistenceAdapterTests {
     private PersonPersistenceAdapter personPersistenceAdapter;
 
     @Test
-    @Sql("PersonPersistenceAdapterTests.sql")
+    @Sql({"createTable.sql","PersonPersistenceAdapterTests.sql"})
     void getAllPersons(){
 
         Map<String, Object> map = new HashMap<>();
