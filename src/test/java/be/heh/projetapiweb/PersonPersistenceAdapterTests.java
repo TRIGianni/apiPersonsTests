@@ -27,8 +27,9 @@ import java.util.Map;
 public class PersonPersistenceAdapterTests {
     @Autowired
     private PersonRepository personRepository;
-    @Autowired
-    private PersonPersistenceAdapter personPersistenceAdapter;
+    //@Autowired
+    //private PersonPersistenceAdapter personPersistenceAdapter;
+    private PersonPersistenceAdapter personPersistenceAdapter = new PersonPersistenceAdapter(personRepository);
 
    /* @Container
     public GenericContainer postgres = new GenericContainer(DockerImageName.parse("postgres:13"))

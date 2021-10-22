@@ -1,11 +1,13 @@
 package be.heh.projetapiweb;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-//@Component
+@Component
+@Profile("dev")
 public class AllPerson implements AllPersonUseCase{
     @Override
     public Map<String, Object> getPersons() {
