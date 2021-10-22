@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 @RequiredArgsConstructor
-@Component
 public class PersonPersistenceAdapter implements AllPersonUseCase{
 
     private final PersonRepository personRepository;

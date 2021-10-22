@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-@Component
+//@Component
 public class AllPerson implements AllPersonUseCase{
     @Override
     public Map<String, Object> getPersons() {
