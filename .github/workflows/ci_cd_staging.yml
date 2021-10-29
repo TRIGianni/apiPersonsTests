@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Deploy to Heroku
         env:
-          HEROKU_API_API: ${{ secrets.HEROKU_API_TOKEN }}
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_STAGING }}
         if: github.ref == 'refs/heads/master' && job.status == 'success'
-        run: git push https://heroku:3d1fa070-9a16-4f5a-bbc0-d41ed14ec5c0@git.heroku.com/projet-web-heh-staging.git origin/master:master
+        run: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/projet-web-heh-staging.git master
