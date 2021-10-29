@@ -29,7 +29,7 @@ public class PersonPersistenceAdapterTests {
     private PersonRepository personRepository;
     //@Autowired
     //private PersonPersistenceAdapter personPersistenceAdapter;
-    private PersonPersistenceAdapter personPersistenceAdapter = new PersonPersistenceAdapter(personRepository);
+    private PersonPersistenceAdapter personPersistenceAdapter;
 
    /* @Container
     public GenericContainer postgres = new GenericContainer(DockerImageName.parse("postgres:13"))
@@ -45,6 +45,7 @@ public class PersonPersistenceAdapterTests {
     @Sql({"createTable.sql","PersonPersistenceAdapterTests.sql"})
     void getAllPersons(){
         conteneur.start();
+        personPersistenceAdapter = new PersonPersistenceAdapter(personRepository);
         Map<String, Object> map = new HashMap<>();
         ArrayList<Person> pers;
 
